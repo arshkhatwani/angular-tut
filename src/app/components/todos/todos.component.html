@@ -3,6 +3,12 @@
 </div>
 
 <div class="my-4">
+  <h1 class="text-2xl font-bold mb-6">Your todos</h1>
+
+  <div *ngIf="!todos.length">
+    <h1 class="text-lg text-center font-bold mb-6">No todos to display</h1>
+  </div>
+
   <div *ngFor="let todo of todos">
     <app-todo-item
       [todo]="todo"

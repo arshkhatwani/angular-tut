@@ -10,32 +10,7 @@ export class TodosComponent {
   todos: Todo[];
 
   constructor() {
-    this.todos = [
-      {
-        sno: 3,
-        title: 'Get groceries',
-        desc: 'grocery grocery grocery grocery',
-        active: true,
-      },
-      {
-        sno: 4,
-        title: 'Get books',
-        desc: 'books books books books',
-        active: true,
-      },
-      {
-        sno: 2,
-        title: 'Go gym',
-        desc: 'gym gym gym gym',
-        active: true,
-      },
-      {
-        sno: 6,
-        title: 'Read book',
-        desc: 'Read Read Read Read',
-        active: true,
-      },
-    ];
+    this.todos = [];
   }
 
   deleteTodo(todo: Todo) {
