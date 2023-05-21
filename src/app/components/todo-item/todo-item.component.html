@@ -3,12 +3,30 @@
     href="#"
     class="block max-w-2xl p-6 bg-white border border-gray-400 rounded-lg shadow hover:bg-gray-100"
   >
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+    <h5
+      class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+      [ngClass]="{ 'line-through': !todo.active }"
+    >
       {{ todo.title }}
     </h5>
     <p class="font-normal text-gray-700 mb-4">
       {{ todo.desc }}
     </p>
+
+    <div class="flex items-center mb-4">
+      <input
+        id="checkbox-{{ todoIdx }}"
+        type="checkbox"
+        [checked]="!todo.active"
+        (click)="onCheckBoxClick()"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+      />
+      <label
+        for="checkbox-{{ todoIdx }}"
+        class="ml-2 text-sm font-medium text-gray-900"
+        >Mark as Done</label
+      >
+    </div>
 
     <button
       type="button"

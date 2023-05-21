@@ -23,4 +23,9 @@ export class TodosComponent {
     this.todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
+
+  toggleStatus(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    this.todos[index].active = !this.todos[index].active;
+  }
 }

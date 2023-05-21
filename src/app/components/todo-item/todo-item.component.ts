@@ -9,9 +9,15 @@ import { Input } from '@angular/core';
 })
 export class TodoItemComponent {
   @Input() todo: Todo = {};
+  @Input() todoIdx: number = 0;
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+  @Output() statusToggle: EventEmitter<Todo> = new EventEmitter();
 
   onClick() {
     this.todoDelete.emit(this.todo);
+  }
+
+  onCheckBoxClick() {
+    this.statusToggle.emit(this.todo);
   }
 }
